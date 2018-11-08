@@ -1,7 +1,7 @@
 #include "Sequence.h"
 #include <stdlib.h>
-#define LIST_INIT_SIZE 100//´æ´¢¿Õ¼äµÄ³õÊ¼·ÖÅäÁ¿
-#define LISTINCREMENTAL 10//´æ´¢¿Õ¼äµÄ·ÖÅäÔöÁ¿
+#define LIST_INIT_SIZE 100//å­˜å‚¨ç©ºé—´çš„åˆå§‹åˆ†é…é‡
+#define LISTINCREMENTAL 10//å­˜å‚¨ç©ºé—´çš„åˆ†é…å¢é‡
 Sequence::Sequence()
 {
 	this->_elem = (ListNode * )malloc(LIST_INIT_SIZE * sizeof(ListNode));
@@ -18,15 +18,15 @@ Sequence::~Sequence()
 void Sequence::Insert(int i, ListNode e)
 {
 	if (i<1 || i>length + 1) exit(1);
-	if (length >= listsize) {//µ±Ç°´æ´¢¿Õ¼äÒÑÂú£¬Ôö¼Ó·ÖÅä
+	if (length >= listsize) {//å½“å‰å­˜å‚¨ç©ºé—´å·²æ»¡ï¼Œå¢åŠ åˆ†é…
 		ListNode * newbase = (ListNode *)realloc(_elem, (listsize + LISTINCREMENTAL) * sizeof(ListNode));
 		if (!newbase) exit(0);
 		_elem = newbase;
 		listsize += LISTINCREMENTAL;
 	}
-	ListNode * q = &_elem[i - 1];//²åÈëÎ»ÖÃ
+	ListNode * q = &_elem[i - 1];//æ’å…¥ä½ç½®
 	for (ListNode * p = &_elem[length - 1]; p >= q; --p) {
-		//²åÈëÎ»ÖÃ¼°Ö®ºóµÄÔªËØÓÒÒÆ
+		//æ’å…¥ä½ç½®åŠä¹‹åçš„å…ƒç´ å³ç§»
 		*(p + 1) = *p;
 	}
 	*q = e;
@@ -36,11 +36,11 @@ void Sequence::Insert(int i, ListNode e)
 ListNode Sequence::Delete(int i)
 {
 	if (i<1 || i>length)exit(0);
-	ListNode * p = &_elem[i - 1];//±»É¾³ıÔªËØµÄÎ»ÖÃ
+	ListNode * p = &_elem[i - 1];//è¢«åˆ é™¤å…ƒç´ çš„ä½ç½®
 	ListNode ret = *p;
-	ListNode * q = _elem + length - 1;//±íÎ²ÔªËØµÄÎ»ÖÃ
+	ListNode * q = _elem + length - 1;//è¡¨å°¾å…ƒç´ çš„ä½ç½®
 	for (++p; p <= q; ++p) {
-		//±»É¾³ıÔªËØÖ®ºóµÄÔªËØ×óÒÆ
+		//è¢«åˆ é™¤å…ƒç´ ä¹‹åçš„å…ƒç´ å·¦ç§»
 		*(p - 1) = *p;
 	}
 	length--;
@@ -48,7 +48,7 @@ ListNode Sequence::Delete(int i)
 }
 
 int Sequence::LocateElem(ListNode e, bool(*compare)(ListNode, ListNode))
-{//²éÕÒµÚÒ»¸öÖµÓëeÂú×ãcompare()µÄÔªËØµÄÎ»Ğò,·ñÔò·µ»Ø0
+{//æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå€¼ä¸eæ»¡è¶³compare()çš„å…ƒç´ çš„ä½åº,å¦åˆ™è¿”å›0
 	int i = 1;
 	ListNode * p = _elem;
 	while (i <= length && !(*compare)(*p++, e)) ++i;
@@ -58,10 +58,10 @@ int Sequence::LocateElem(ListNode e, bool(*compare)(ListNode, ListNode))
 
 void Sequence::Add(Sequence s)
 {
-	//½«ÁíÒ»¸öË³Ğò±í¶àÏîÊ½µ½ÆäÉÏ
-	//Ä¬ÈÏËùÓĞ¶àÏîÊ½µÄÃ¿Ò»ÏîµÄÖ¸ÊıÊÇµ¥µ÷µİÔöµÄ
-	ListNode * pa = this->_elem;//ÓÃÓÚ±éÀúÓÃ×÷±»¼ÓÊıµÄË³Ğò±í
-	ListNode * pb = s._elem;//ÓÃÓÚ±éÀúÓÃ×÷¼ÓÊıµÄË³Ğò±í
+	//å°†å¦ä¸€ä¸ªé¡ºåºè¡¨å¤šé¡¹å¼åˆ°å…¶ä¸Š
+	//é»˜è®¤æ‰€æœ‰å¤šé¡¹å¼çš„æ¯ä¸€é¡¹çš„æŒ‡æ•°æ˜¯å•è°ƒé€’å¢çš„
+	ListNode * pa = this->_elem;//ç”¨äºéå†ç”¨ä½œè¢«åŠ æ•°çš„é¡ºåºè¡¨
+	ListNode * pb = s._elem;//ç”¨äºéå†ç”¨ä½œåŠ æ•°çš„é¡ºåºè¡¨
 	for (int i = 0; i < s.length; i++) {
 		pa = this->_elem;
 		int paAddNum = 0;
@@ -80,10 +80,10 @@ void Sequence::Add(Sequence s)
 
 void Sequence::Minus(Sequence s)
 {
-	//¼õÈ¥ÁíÒ»¸ö¶àÏîÊ½
-	//Ä¬ÈÏËùÓĞ¶àÏîÊ½µÄÃ¿Ò»ÏîµÄÖ¸ÊıÊÇµ¥µ÷µİÔöµÄ
-	ListNode * pa = this->_elem;//ÓÃÓÚ±éÀúÓÃ×÷±»¼õÊıµÄË³Ğò±í
-	ListNode * pb = s._elem;//ÓÃÓÚ±éÀúÓÃ×÷¼õÊıµÄË³Ğò±í
+	//å‡å»å¦ä¸€ä¸ªå¤šé¡¹å¼
+	//é»˜è®¤æ‰€æœ‰å¤šé¡¹å¼çš„æ¯ä¸€é¡¹çš„æŒ‡æ•°æ˜¯å•è°ƒé€’å¢çš„
+	ListNode * pa = this->_elem;//ç”¨äºéå†ç”¨ä½œè¢«å‡æ•°çš„é¡ºåºè¡¨
+	ListNode * pb = s._elem;//ç”¨äºéå†ç”¨ä½œå‡æ•°çš„é¡ºåºè¡¨
 	for (int i = 0; i < s.length; i++) {
 		pa = this->_elem;
 		int paAddNum = 0;

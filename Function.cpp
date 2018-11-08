@@ -27,8 +27,8 @@ void Function::print()
 
 Function * Function::DEF(const string & input)
 {
-	//É¨ÃèÊäÈëÐÅÏ¢
-	//²ð·Ö×Ö·û´®£¬ÓÃÓÚÉú³ÉÊµÀý
+	//æ‰«æè¾“å…¥ä¿¡æ¯
+	//æ‹†åˆ†å­—ç¬¦ä¸²ï¼Œç”¨äºŽç”Ÿæˆå®žä¾‹
 	int le = input.length();
 	int curPos = 0;
 	string fn = "";
@@ -49,7 +49,7 @@ Function * Function::DEF(const string & input)
 
 void Function::RUN(double val)
 {
-	//¸³Öµ²¢ÔËËã
+	//èµ‹å€¼å¹¶è¿ç®—
 	auto ari = this->ariX->Assign(val);
 	cout << ari.getResult() << endl;
 }

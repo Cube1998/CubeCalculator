@@ -45,7 +45,7 @@ void Vector::print()
 
 double Vector::getCosAngle(Vector &vec)
 {
-	//ÉñÆæ´úÂë£¬Îğ¶¯
+	//ç¥å¥‡ä»£ç ï¼Œå‹¿åŠ¨
 	double l2 = 0;
 	if (dimension != vec.dimension) exit(0);
 	for (int i = 0; i < dimension; i++) {

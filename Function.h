@@ -5,16 +5,16 @@ class Function
 public:
 	Function();
 	Function(string exp, string vn, string fn);
-	Function(const Function & func);//¸´ÖÆ¹¹Ôìº¯Êı
-	void print();//Êä³öº¯Êı
-	static Function * DEF(const string & input);//¾²Ì¬DEFº¯Êı£¬ÓÃÓÚÉú³ÉFunctionÊµÀı,²¢·µ»ØÆäÖ¸Õë
+	Function(const Function & func);//å¤åˆ¶æ„é€ å‡½æ•°
+	void print();//è¾“å‡ºå‡½æ•°
+	static Function * DEF(const string & input);//é™æ€DEFå‡½æ•°ï¼Œç”¨äºç”ŸæˆFunctionå®ä¾‹,å¹¶è¿”å›å…¶æŒ‡é’ˆ
 	void RUN(double val);
 	const string & getName() {
 		return FuncName;
 	}
 	~Function();
 private:
-	ArithmeticX * ariX;//º¯Êı±í´ïÊ½
-	string FuncName;//º¯ÊıÃû
+	ArithmeticX * ariX;//å‡½æ•°è¡¨è¾¾å¼
+	string FuncName;//å‡½æ•°å
 };
 

@@ -5,17 +5,17 @@ class ArithmeticX
 public:
 	friend class Function;
 	ArithmeticX();
-	ArithmeticX(string exp,string vn);//¹¹Ôìº¯Êı
-	ArithmeticX(const ArithmeticX & ax);//¸´ÖÆ¹¹Ôìº¯Êı
-	Arithmetic Assign(double val);//¸³Öµº¯Êı
+	ArithmeticX(string exp,string vn);//æ„é€ å‡½æ•°
+	ArithmeticX(const ArithmeticX & ax);//å¤åˆ¶æ„é€ å‡½æ•°
+	Arithmetic Assign(double val);//èµ‹å€¼å‡½æ•°
 	void print();
 	const string & getVarName() {
 		return VariableName;
 	}
 	~ArithmeticX();
 private:
-	string VariableName;//±äÁ¿Ãû
-	string Expression;//±í´ïÊ½
-	string AssignedExpression;//¸³Öµºó±í´ïÊ½
+	string VariableName;//å˜é‡å
+	string Expression;//è¡¨è¾¾å¼
+	string AssignedExpression;//èµ‹å€¼åè¡¨è¾¾å¼
 };
 

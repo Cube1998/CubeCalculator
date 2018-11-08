@@ -9,9 +9,9 @@ public:
 	void Add(const Vector vec);
 	void Minus(const Vector vec);
 	void print();
-	double getCosAngle(Vector &vec);//ÇóÈ¡ÏòÁ¿¼Ğ½ÇµÄÓàÏÒÖµ
+	double getCosAngle(Vector &vec);//æ±‚å–å‘é‡å¤¹è§’çš„ä½™å¼¦å€¼
 private:
 	int * _Elem;
-	int dimension;//Î¬Êı
+	int dimension;//ç»´æ•°
 };
 

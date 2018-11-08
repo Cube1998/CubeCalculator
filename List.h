@@ -4,28 +4,28 @@
 class List {
 public:
     List() {
-		//¹¹Ôìº¯Êı
-		//Ë«ÏòÁ´±í
+		//æ„é€ å‡½æ•°
+		//åŒå‘é“¾è¡¨
         header = new ListNode(0, -INF);
         tailer = new ListNode(0,  INF);
         header->_next = tailer;
         tailer->_prev = header;
     }
-	void addNode(const ListNode& node);//²åÈë½áµã£¬°´ÕÕÖ¸ÊıÉıĞò²åÈë
-	void deleteNode(ListNode * node);//É¾³ıÖ¸¶¨Ö¸ÕëÖ¸ÏòµÄ½áµã
-    void add(const List & poly);//Á´±í¶àÏîÊ½µÄ¼Ó·¨
-    void minus(const List & poly);//Á´±í¶àÏîÊ½µÄ¼õ·¨
-    void add(double coef, int expn);//¼Ó·¨ÖØÔØ£¬ÀàËÆ²åÈë½áµã
+	void addNode(const ListNode& node);//æ’å…¥ç»“ç‚¹ï¼ŒæŒ‰ç…§æŒ‡æ•°å‡åºæ’å…¥
+	void deleteNode(ListNode * node);//åˆ é™¤æŒ‡å®šæŒ‡é’ˆæŒ‡å‘çš„ç»“ç‚¹
+    void add(const List & poly);//é“¾è¡¨å¤šé¡¹å¼çš„åŠ æ³•
+    void minus(const List & poly);//é“¾è¡¨å¤šé¡¹å¼çš„å‡æ³•
+    void add(double coef, int expn);//åŠ æ³•é‡è½½ï¼Œç±»ä¼¼æ’å…¥ç»“ç‚¹
 	void multiply(const List & poly,List & result);
-	void Derivation();//Çóµ¼Ò»´Î
-    void print() const;//Êä³ö¶àÏîÊ½
+	void Derivation();//æ±‚å¯¼ä¸€æ¬¡
+    void print() const;//è¾“å‡ºå¤šé¡¹å¼
 
 private:
 
     static const int INF = 0x7fffffff;
 
-    ListNode * header;//Í·½áµã
-    ListNode * tailer;//Î²½áµã
+    ListNode * header;//å¤´ç»“ç‚¹
+    ListNode * tailer;//å°¾ç»“ç‚¹
 
 
 };

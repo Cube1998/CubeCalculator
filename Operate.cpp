@@ -15,17 +15,17 @@ Operate::~Operate()
 
 void Operate::printMenu()
 {
-	cout << "1.Í¬Î¬¶ÈÏòÁ¿µÄ¼Ó·¨" << endl
-		<< "2.Í¬Î¬¶ÈÏòÁ¿µÄ¼õ·¨" << endl
-		<< "3.Ò»Ôª¶àÏîÊ½µÄ¼Ó·¨" << endl
-		<< "4.Ò»Ôª¶àÏîÊ½µÄ¼õ·¨" << endl
-		<< "5.ÏòÁ¿µÄ¼Ð½ÇÓàÏÒÖµ" << endl
-		<< "6.Çó¶à½×µ¼Êý" << endl
-		<< "7.¶àÏîÊ½µÄ³Ë·¨" << endl
-		<< "8.ËÄÔòÔËËã±í´ïÊ½ÇóÖµ" << endl
-		<< "9.º¬Î´ÖªÊýµÄ±í´ïÊ½ÇóÖµ" << endl
-		<< "10.²Ù×÷×Ô¶¨Òåº¯Êý" << endl
-		<< "ÇëÑ¡ÔñÒ»¸ö²Ù×÷" << endl;
+	cout << "1.åŒç»´åº¦å‘é‡çš„åŠ æ³•" << endl
+		<< "2.åŒç»´åº¦å‘é‡çš„å‡æ³•" << endl
+		<< "3.ä¸€å…ƒå¤šé¡¹å¼çš„åŠ æ³•" << endl
+		<< "4.ä¸€å…ƒå¤šé¡¹å¼çš„å‡æ³•" << endl
+		<< "5.å‘é‡çš„å¤¹è§’ä½™å¼¦å€¼" << endl
+		<< "6.æ±‚å¤šé˜¶å¯¼æ•°" << endl
+		<< "7.å¤šé¡¹å¼çš„ä¹˜æ³•" << endl
+		<< "8.å››åˆ™è¿ç®—è¡¨è¾¾å¼æ±‚å€¼" << endl
+		<< "9.å«æœªçŸ¥æ•°çš„è¡¨è¾¾å¼æ±‚å€¼" << endl
+		<< "10.æ“ä½œè‡ªå®šä¹‰å‡½æ•°" << endl
+		<< "è¯·é€‰æ‹©ä¸€ä¸ªæ“ä½œ" << endl;
 }
 
 void Operate::FunctionBox(int c)
@@ -36,20 +36,20 @@ void Operate::FunctionBox(int c)
 		int dimension;
 		int x1[100];
 		int x2[100];
-		cout << "ÇëÊäÈëÏòÁ¿µÄÎ¬Êý:" << endl;
+		cout << "è¯·è¾“å…¥å‘é‡çš„ç»´æ•°:" << endl;
 		cin >> dimension;
-		cout << "ÇëÊäÈëµÚÒ»¸öÏòÁ¿:" << endl;
+		cout << "è¯·è¾“å…¥ç¬¬ä¸€ä¸ªå‘é‡:" << endl;
 		for (int i = 0; i < dimension; i++) {
 			cin >> x1[i];
 		}
-		cout << "ÇëÊäÈëµÚ¶þ¸öÏòÁ¿:" << endl;
+		cout << "è¯·è¾“å…¥ç¬¬äºŒä¸ªå‘é‡:" << endl;
 		for (int i = 0; i < dimension; i++) {
 			cin >> x2[i];
 		}
 		Vector v1(dimension, x1);
 		Vector v2(dimension, x2);
 		v1.Add(v2);
-		cout << "ÔËËã½á¹ûÊÇ: ";
+		cout << "è¿ç®—ç»“æžœæ˜¯: ";
 		v1.print();
 		break;
 	}
@@ -57,20 +57,20 @@ void Operate::FunctionBox(int c)
 		int dimension;
 		int x1[100];
 		int x2[100];
-		cout << "ÇëÊäÈëÏòÁ¿µÄÎ¬Êý:" << endl;
+		cout << "è¯·è¾“å…¥å‘é‡çš„ç»´æ•°:" << endl;
 		cin >> dimension;
-		cout << "ÇëÊäÈë±»¼õÏòÁ¿:" << endl;
+		cout << "è¯·è¾“å…¥è¢«å‡å‘é‡:" << endl;
 		for (int i = 0; i < dimension; i++) {
 			cin >> x1[i];
 		}
-		cout << "ÇëÊäÈë¼õÊýÏòÁ¿:" << endl;
+		cout << "è¯·è¾“å…¥å‡æ•°å‘é‡:" << endl;
 		for (int i = 0; i < dimension; i++) {
 			cin >> x2[i];
 		}
 		Vector v1(dimension, x1);
 		Vector v2(dimension, x2);
 		v1.Minus(v2);
-		cout << "ÔËËã½á¹ûÊÇ: ";
+		cout << "è¿ç®—ç»“æžœæ˜¯: ";
 		v1.print();
 		break;
 	}
@@ -79,19 +79,19 @@ void Operate::FunctionBox(int c)
 		List l1, l2;
 		Sequence s1, s2;
 		ListNode n1[100], n2[100];
-		cout << "µÚÒ»¸ö¶àÏîÊ½ÓÐ¼¸Ïî:" << endl;
+		cout << "ç¬¬ä¸€ä¸ªå¤šé¡¹å¼æœ‰å‡ é¡¹:" << endl;
 		cin >> d1;
 		for (int i = 0; i < d1; i++) {
-			cout << "°´Ö¸Êý´óÐ¡,ÇëÊäÈëµÚ" << i + 1 << "Ïî(ÏµÊý Ö¸Êý):" << endl;
+			cout << "æŒ‰æŒ‡æ•°å¤§å°,è¯·è¾“å…¥ç¬¬" << i + 1 << "é¡¹(ç³»æ•° æŒ‡æ•°):" << endl;
 			cin >> n1[i]._coef >> n1[i]._expn;
 			l1.addNode(n1[i]);
 			s1.Insert(1, n1[i]);
 		}
 		l1.print();
-		cout << "µÚÒ»¸ö¶àÏîÊ½ÓÐ¼¸Ïî:" << endl;
+		cout << "ç¬¬ä¸€ä¸ªå¤šé¡¹å¼æœ‰å‡ é¡¹:" << endl;
 		cin >> d2;
 		for (int i = 0; i < d2; i++) {
-			cout << "°´Ö¸Êý´óÐ¡,ÇëÊäÈëµÚ" << i + 1 << "Ïî(ÏµÊý Ö¸Êý):" << endl;
+			cout << "æŒ‰æŒ‡æ•°å¤§å°,è¯·è¾“å…¥ç¬¬" << i + 1 << "é¡¹(ç³»æ•° æŒ‡æ•°):" << endl;
 			cin >> n2[i]._coef >> n2[i]._expn;
 			l2.addNode(n2[i]);
 			s2.Insert(1, n2[i]);
@@ -99,9 +99,9 @@ void Operate::FunctionBox(int c)
 		l2.print();
 		l1.add(l2);
 		s1.Add(s2);
-		cout << "Á´±í¼ÆËã½á¹ûÊÇ:";
+		cout << "é“¾è¡¨è®¡ç®—ç»“æžœæ˜¯:";
 		l1.print();
-		cout << "Ë³Ðò±í¼ÆËã½á¹ûÊÇ:";
+		cout << "é¡ºåºè¡¨è®¡ç®—ç»“æžœæ˜¯:";
 		s1.print();
 		break;
 	}
@@ -110,19 +110,19 @@ void Operate::FunctionBox(int c)
 		List l1, l2;
 		Sequence s1, s2;
 		ListNode n1[100], n2[100];
-		cout << "µÚÒ»¸ö¶àÏîÊ½ÓÐ¼¸Ïî:" << endl;
+		cout << "ç¬¬ä¸€ä¸ªå¤šé¡¹å¼æœ‰å‡ é¡¹:" << endl;
 		cin >> d1;
 		for (int i = 0; i < d1; i++) {
-			cout << "°´Ö¸ÊýÓÉ¸ßµ½µÍË³Ðò,ÇëÊäÈëµÚ" << i + 1 << "Ïî(ÏµÊý Ö¸Êý):" << endl;
+			cout << "æŒ‰æŒ‡æ•°ç”±é«˜åˆ°ä½Žé¡ºåº,è¯·è¾“å…¥ç¬¬" << i + 1 << "é¡¹(ç³»æ•° æŒ‡æ•°):" << endl;
 			cin >> n1[i]._coef >> n1[i]._expn;
 			l1.addNode(n1[i]);
 			s1.Insert(1, n1[i]);
 		}
 		l1.print();
-		cout << "µÚ¶þ¸ö¶àÏîÊ½ÓÐ¼¸Ïî:" << endl;
+		cout << "ç¬¬äºŒä¸ªå¤šé¡¹å¼æœ‰å‡ é¡¹:" << endl;
 		cin >> d2;
 		for (int i = 0; i < d2; i++) {
-			cout << "°´Ö¸ÊýÓÉ¸ßµ½µÍË³Ðò,ÇëÊäÈëµÚ" << i + 1 << "Ïî(ÏµÊý Ö¸Êý):" << endl;
+			cout << "æŒ‰æŒ‡æ•°ç”±é«˜åˆ°ä½Žé¡ºåº,è¯·è¾“å…¥ç¬¬" << i + 1 << "é¡¹(ç³»æ•° æŒ‡æ•°):" << endl;
 			cin >> n2[i]._coef >> n2[i]._expn;
 			l2.addNode(n2[i]);
 			s2.Insert(1, n2[i]);
@@ -130,9 +130,9 @@ void Operate::FunctionBox(int c)
 		l2.print();
 		l1.minus(l2);
 		s1.Minus(s2);
-		cout << "Á´±í¼ÆËã½á¹ûÊÇ:";
+		cout << "é“¾è¡¨è®¡ç®—ç»“æžœæ˜¯:";
 		l1.print();
-		cout << "Ë³Ðò±í¼ÆËã½á¹ûÊÇ:";
+		cout << "é¡ºåºè¡¨è®¡ç®—ç»“æžœæ˜¯:";
 		s1.print();
 		break;
 	}
@@ -140,20 +140,20 @@ void Operate::FunctionBox(int c)
 		int dimension;
 		int x1[100];
 		int x2[100];
-		cout << "ÇëÊäÈëÏòÁ¿µÄÎ¬Êý:" << endl;
+		cout << "è¯·è¾“å…¥å‘é‡çš„ç»´æ•°:" << endl;
 		cin >> dimension;
-		cout << "ÇëÊäÈëµÚÒ»¸öÏòÁ¿:" << endl;
+		cout << "è¯·è¾“å…¥ç¬¬ä¸€ä¸ªå‘é‡:" << endl;
 		for (int i = 0; i < dimension; i++) {
 			cin >> x1[i];
 		}
-		cout << "ÇëÊäÈëµÚ¶þ¸öÏòÁ¿:" << endl;
+		cout << "è¯·è¾“å…¥ç¬¬äºŒä¸ªå‘é‡:" << endl;
 		for (int i = 0; i < dimension; i++) {
 			cin >> x2[i];
 		}
 		Vector v1(dimension, x1);
 		Vector v2(dimension, x2);
 
-		cout << "Á½ÏòÁ¿¼Ð½ÇµÄÓàÏÒÖµÎª:" << v1.getCosAngle(v2) << endl;
+		cout << "ä¸¤å‘é‡å¤¹è§’çš„ä½™å¼¦å€¼ä¸º:" << v1.getCosAngle(v2) << endl;
 
 		break;
 	}
@@ -161,29 +161,29 @@ void Operate::FunctionBox(int c)
 		int d;
 		int num;
 		List l;
-		cout << "ÇëÊäÈëÔ­Ê¼¶àÏîÊ½µÄÏîÊý:" << endl;
+		cout << "è¯·è¾“å…¥åŽŸå§‹å¤šé¡¹å¼çš„é¡¹æ•°:" << endl;
 		cin >> d;
 		for (int i = 0; i < d; i++) {
 			double coef;
 			int expn;
-			cout << "°´Ö¸ÊýÓÉ¸ßµ½µÍË³Ðò,ÇëÊäÈëµÚ" << i + 1 << "Ïî(ÏµÊý Ö¸Êý):" << endl;
+			cout << "æŒ‰æŒ‡æ•°ç”±é«˜åˆ°ä½Žé¡ºåº,è¯·è¾“å…¥ç¬¬" << i + 1 << "é¡¹(ç³»æ•° æŒ‡æ•°):" << endl;
 			cin >> coef >> expn;
 			l.addNode(ListNode(coef, expn));
 		}
 		l.print();
-		cout << "ÇëÊäÈëÇóµ¼´ÎÊý:" << endl;
+		cout << "è¯·è¾“å…¥æ±‚å¯¼æ¬¡æ•°:" << endl;
 		cin >> num;
 		for (int i = 0; i < num; i++) {
 			l.Derivation();
 		}
-		cout << "Çóµ¼½á¹ûÊÇ:";
+		cout << "æ±‚å¯¼ç»“æžœæ˜¯:";
 		l.print();
 		break;
 	}
 	case 7: {
 		int d1, d2;
 		List l1, l2, result;
-		cout << "µÚÒ»¸ö¶àÏîÊ½ÓÐ¼¸Ïî:" << endl;
+		cout << "ç¬¬ä¸€ä¸ªå¤šé¡¹å¼æœ‰å‡ é¡¹:" << endl;
 		cin >> d1;
 		for (int i = 0; i < d1; i++) {
 			int coef, expn;
@@ -192,7 +192,7 @@ void Operate::FunctionBox(int c)
 			l1.addNode(ListNode(coef, expn));
 		}
 		l1.print();
-		cout << "µÚ¶þ¸ö¶àÏîÊ½ÓÐ¼¸Ïî:" << endl;
+		cout << "ç¬¬äºŒä¸ªå¤šé¡¹å¼æœ‰å‡ é¡¹:" << endl;
 		cin >> d2;
 		for (int i = 0; i < d2; i++) {
 			int coef, expn;
@@ -261,11 +261,11 @@ void Operate::FunctionBox(int c)
 				double val = Arithmetic::String2Num(Val_str);
 				for (auto it = funcs.begin(); it != funcs.end(); ++it) {
 					if ((*it)->getName() == funcName) {
-						cout << "½á¹ûÊÇ: ";
+						cout << "ç»“æžœæ˜¯: ";
 						(*it)->RUN(val);
 						break;
 					}
-					if (it == funcs.end()) cout << "Ã»ÓÐÕÒµ½¶ÔÓ¦º¯Êý" << endl;
+					if (it == funcs.end()) cout << "æ²¡æœ‰æ‰¾åˆ°å¯¹åº”å‡½æ•°" << endl;
 				}
 			}
 			else if (insName == "WHO") {
@@ -283,7 +283,7 @@ void Operate::FunctionBox(int c)
 				//cout << endl;
 			}
 			else {
-				cout << "Ã»ÓÐ¶ÔÓ¦Ö¸Áî" << endl;
+				cout << "æ²¡æœ‰å¯¹åº”æŒ‡ä»¤" << endl;
 			}
 
 			getline(cin, instruction);
@@ -297,9 +297,9 @@ void Operate::FunctionBox(int c)
 
 void Operate::test(int c)
 {
-	int dim = 11;//Î¬Êý
-	int x1[100] = { 2, -45, 32, -245, 0, 3442, 5, 0, 25, 56, -23 };//ÏòÁ¿1
-	int x2[100] = { 8, 90, 55, -3, 0, 67, 790, 234, 804, 0, -687 };//ÏòÁ¿2
+	int dim = 11;//ç»´æ•°
+	int x1[100] = { 2, -45, 32, -245, 0, 3442, 5, 0, 25, 56, -23 };//å‘é‡1
+	int x2[100] = { 8, 90, 55, -3, 0, 67, 790, 234, 804, 0, -687 };//å‘é‡2
 	Vector v1(11, x1);
 	Vector v2(11, x2);
 
@@ -335,7 +335,7 @@ void Operate::test(int c)
 	}
 	case 6: {
 		int num;
-		cout << "ÇëÊäÈëÇóµ¼´ÎÊý:" << endl;
+		cout << "è¯·è¾“å…¥æ±‚å¯¼æ¬¡æ•°:" << endl;
 		cin >> num;
 		for (int i = 0; i < num; i++) {
 			L1.Derivation();

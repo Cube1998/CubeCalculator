@@ -22,8 +22,8 @@ ArithmeticX::ArithmeticX(const ArithmeticX & ax)
 
 Arithmetic ArithmeticX::Assign(double val)
 {
-	//¸³Öµº¯Êı
-	//Í¨¹ı¸ø±äÁ¿¸³Öµ£¬µÃµ½Ò»¸öÆÕÍ¨µÄËÄÔòÔËËã±í´ïÊ½
+	//èµ‹å€¼å‡½æ•°
+	//é€šè¿‡ç»™å˜é‡èµ‹å€¼ï¼Œå¾—åˆ°ä¸€ä¸ªæ™®é€šçš„å››åˆ™è¿ç®—è¡¨è¾¾å¼
 	AssignedExpression = Expression;
 	string Val_str = to_string(val);
 	while (AssignedExpression.find(VariableName) != string::npos) {

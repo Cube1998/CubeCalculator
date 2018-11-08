@@ -34,15 +34,15 @@ Arithmetic::Arithmetic(const Arithmetic & ari)
 
 void Arithmetic::print()
 {
-	//Êä³öº¯Êı
+	//è¾“å‡ºå‡½æ•°
 	cout << "  Infix: " << InfixExpression << endl;
 	cout << "Postfix: " << PostfixExpression << endl;
 }
 
 double Arithmetic::getResult()
 {
-	//¼ÆËãËÄÔòÔËËã±í´ïÊ½
-	//Í¨¹ıºó×º±í´ïÊ½
+	//è®¡ç®—å››åˆ™è¿ç®—è¡¨è¾¾å¼
+	//é€šè¿‡åç¼€è¡¨è¾¾å¼
 	stack<double> tmp;
 	for (int i = 0; i < PostfixExpression.length(); i++) {
 		if (isOperator(PostfixExpression[i])) Calc(PostfixExpression[i], tmp);
@@ -67,7 +67,7 @@ Arithmetic::~Arithmetic()
 
 double Arithmetic::String2Num(string s)
 {
-	//½«×Ö·û´®×ª»»ÎªÊı×Ö
+	//å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ•°å­—
 	double ret = 0.0;
 	int PointPosition = s.length();
 	for (int i = 0; i < s.length(); i++) {
@@ -83,8 +83,8 @@ double Arithmetic::String2Num(string s)
 
 void Arithmetic::Calc(char op, stack<double>& s)
 {
-	//½«Õ»ÀïµÄÁ½¸öÊı×ÖÓÃÒ»ÖÖ·ûºÅÔËËã
-	//½á¹ûÈëÕ»
+	//å°†æ ˆé‡Œçš„ä¸¤ä¸ªæ•°å­—ç”¨ä¸€ç§ç¬¦å·è¿ç®—
+	//ç»“æœå…¥æ ˆ
 	double ret;
 	if (s.size() < 2) return;
 	double Val2 = s.top();
@@ -122,16 +122,16 @@ void Arithmetic::Calc(char op, stack<double>& s)
 void Arithmetic::Infix2Postfix()
 {
 	if (InfixExpression[0] == '-') {
-		//ÌØÅĞÊ×Î»¸ººÅ
+		//ç‰¹åˆ¤é¦–ä½è´Ÿå·
 		InfixExpression = "0" + InfixExpression;
 	}
 	while (InfixExpression.find("(-") != string::npos) {
-		//½â¾ö·ûºÅÎÊÌâ
+		//è§£å†³ç¬¦å·é—®é¢˜
 		int pos = InfixExpression.find("(-");
 		InfixExpression.insert(pos + 1, 1, '0');
 	}
 	while (InfixExpression.find("*-") != string::npos) {
-		//½â¾ö±äÁ¿¸³ÖµºóµÄ²»ºÏ·¨ÎÊÌâ
+		//è§£å†³å˜é‡èµ‹å€¼åçš„ä¸åˆæ³•é—®é¢˜
 		int pos = InfixExpression.find("*-");
 		InfixExpression.insert(pos + 1, "(0");
 		pos += 4;
@@ -139,7 +139,7 @@ void Arithmetic::Infix2Postfix()
 		InfixExpression.insert(pos, 1, ')');
 	}
 	while (InfixExpression.find("/-") != string::npos) {
-		//½â¾ö±äÁ¿¸³ÖµºóµÄ²»ºÏ·¨ÎÊÌâ
+		//è§£å†³å˜é‡èµ‹å€¼åçš„ä¸åˆæ³•é—®é¢˜
 		int pos = InfixExpression.find("/-");
 		InfixExpression.insert(pos + 1, "(0");
 		pos += 4;
@@ -147,7 +147,7 @@ void Arithmetic::Infix2Postfix()
 		InfixExpression.insert(pos, 1, ')');
 	}
 	while (InfixExpression.find("^-") != string::npos) {
-		//½â¾ö±äÁ¿¸³ÖµºóµÄ²»ºÏ·¨ÎÊÌâ
+		//è§£å†³å˜é‡èµ‹å€¼åçš„ä¸åˆæ³•é—®é¢˜
 		int pos = InfixExpression.find("^-");
 		InfixExpression.insert(pos + 1, "(0");
 		pos += 4;
@@ -157,7 +157,7 @@ void Arithmetic::Infix2Postfix()
 	stack<char> operators;
 	operators.push('#');
 	for (int i = 0; i < InfixExpression.length(); i++) {
-		//É¨Ãè²¢×ª»»
+		//æ‰«æå¹¶è½¬æ¢
 		if (InfixExpression[i] == '(') operators.push(InfixExpression[i]);
 		else if (isNumber(InfixExpression[i])) {
 			int j = i;

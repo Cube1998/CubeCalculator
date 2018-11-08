@@ -4,11 +4,11 @@
 using namespace std;
 void List::add(const List &poly) {
     for(auto pointer = poly.header->_next; pointer != poly.tailer; pointer = pointer->_next) {
-		//¼Ó·¨µÄÊµÏÖ
+		//åŠ æ³•çš„å®žçŽ°
         addNode(*pointer);
     }
 	for (auto pointer = header->_next; pointer != tailer; pointer = pointer->_next) {
-		//É¾³ýÏµÊýÎª0µÄ½áµã
+		//åˆ é™¤ç³»æ•°ä¸º0çš„ç»“ç‚¹
 		if (pointer->_coef == 0) {
 			ListNode * del = pointer;
 			pointer = pointer->_prev;
@@ -19,11 +19,11 @@ void List::add(const List &poly) {
 
 void List::minus(const List &poly) {
     for(auto pointer = poly.header->_next; pointer != poly.tailer; pointer = pointer->_next) {
-		//¼õ·¨µÄÊµÏÖ
+		//å‡æ³•çš„å®žçŽ°
         add(-pointer->_coef, pointer->_expn);
     }
 	for (auto pointer = header->_next; pointer != tailer; pointer = pointer->_next) {
-		//É¾³ýÏµÊýÎª0µÄ½áµã
+		//åˆ é™¤ç³»æ•°ä¸º0çš„ç»“ç‚¹
 		if (pointer->_coef == 0) {
 			ListNode * del = pointer;
 			pointer = pointer->_prev;
@@ -45,14 +45,14 @@ void List::add(double coef, int expn) {
 
 void List::multiply(const List & poly, List & result)
 {
-	//Öð¸öÏà³Ë
+	//é€ä¸ªç›¸ä¹˜
 	for (auto n = poly.header->_next; n != poly.tailer; n = n->_next) {
 		for (auto p = header->_next; p != tailer; p = p->_next) {
 			p->_coef *= n->_coef;
 			p->_expn += n->_expn;
 		}
 	}
-	//ÖØÐÂÅÅÐò£¬ºÏ²¢Í¬ÀàÏî
+	//é‡æ–°æŽ’åºï¼Œåˆå¹¶åŒç±»é¡¹
 	for (auto p = header->_next; p != tailer; p = p->_next) {
 		result.addNode(*p);
 	}
@@ -60,20 +60,20 @@ void List::multiply(const List & poly, List & result)
 
 void List::Derivation()
 {
-	//ÏµÊýÓëÖ¸ÊýµÄ±ä»¯
+	//ç³»æ•°ä¸ŽæŒ‡æ•°çš„å˜åŒ–
 	for (auto curP = header->_next; curP != tailer; curP = curP->_next) {
 		curP->_coef = curP->_coef * curP->_expn;
 		curP->_expn--;
 	}
-	//0ºÍ¿Õ±íµÄÅÐ¶Ï
+	//0å’Œç©ºè¡¨çš„åˆ¤æ–­
 	if (header->_next!=tailer && header->_next->_expn < 0) {
 		deleteNode(header->_next);
 	}
 }
 
 void List::addNode(const ListNode& node) {
-	//¼Ó½áµã
-	//¼Ó·¨Óë¼õ·¨µÄÊµÏÖ»ù´¡
+	//åŠ ç»“ç‚¹
+	//åŠ æ³•ä¸Žå‡æ³•çš„å®žçŽ°åŸºç¡€
     for(auto pointer = header->_next; pointer != nullptr; pointer = pointer->_next) {
         if(pointer->_expn == node._expn) {
             pointer->_coef += node._coef;
@@ -92,8 +92,8 @@ void List::addNode(const ListNode& node) {
 
 void List::deleteNode(ListNode * node)
 {
-	//É¾³ý½Úµã
-	//ÓÃÓÚÉ¾³ýÏµÊýÎª0µÄ½áµã
+	//åˆ é™¤èŠ‚ç‚¹
+	//ç”¨äºŽåˆ é™¤ç³»æ•°ä¸º0çš„ç»“ç‚¹
 	bool flag = false;
 	for (auto p = header->_next; p != tailer; p = p->_next) {
 		if (p == node) flag = true;
@@ -106,7 +106,7 @@ void List::deleteNode(ListNode * node)
 
 
 void List::print() const {
-	//Êä³öº¯Êý
+	//è¾“å‡ºå‡½æ•°
 	if (header->_next == tailer) {
 		cout << 0 << endl;
 		return;

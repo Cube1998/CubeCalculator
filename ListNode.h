@@ -2,19 +2,19 @@
 class ListNode
 {
 public:
-	ListNode();//Ä¬ÈÏ¹¹Ôìº¯Êı
-	ListNode(const ListNode &node);//¸´ÖÆ¹¹Ôìº¯Êı
-	ListNode(double coef, int expn);//¹¹Ôìº¯Êı
+	ListNode();//é»˜è®¤æ„é€ å‡½æ•°
+	ListNode(const ListNode &node);//å¤åˆ¶æ„é€ å‡½æ•°
+	ListNode(double coef, int expn);//æ„é€ å‡½æ•°
 	~ListNode();
-	double _coef;//ÏµÊı
-	int _expn;//Ö¸Êı
-	ListNode * _next;//ÏÂÒ»½ÚµãÖ¸Õë£¬·½±ãÔÚÁ´±íÖĞÊ¹ÓÃ
-	ListNode * _prev;//ÉÏÒ»½áµãÖ¸Õë£¬·½±ãÔÚÁ´±íÖĞÊ¹ÓÃ
+	double _coef;//ç³»æ•°
+	int _expn;//æŒ‡æ•°
+	ListNode * _next;//ä¸‹ä¸€èŠ‚ç‚¹æŒ‡é’ˆï¼Œæ–¹ä¾¿åœ¨é“¾è¡¨ä¸­ä½¿ç”¨
+	ListNode * _prev;//ä¸Šä¸€ç»“ç‚¹æŒ‡é’ˆï¼Œæ–¹ä¾¿åœ¨é“¾è¡¨ä¸­ä½¿ç”¨
 	bool operator ==(const ListNode & node)const {
 		if (this->_coef == node._coef&&this->_expn == node._expn) return true;
 		return false;
 	}
-	ListNode operator -()const {//¸ººÅÖØÔØ
+	ListNode operator -()const {//è´Ÿå·é‡è½½
 		ListNode ret(-_coef, _expn);
 		return ret;
 	}

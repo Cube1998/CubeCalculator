@@ -7,15 +7,15 @@ class Sequence
 public:
 	Sequence();
 	~Sequence();
-	void Insert(int i, ListNode e);//ÔÚË³ĞòÏßĞÔ±íµÄµÚi¸öÎ»ÖÃÖ®Ç°²åÈëĞÂµÄÔªËØe
-	ListNode Delete(int i);//É¾³ıµÚi¸öÔªËØ²¢·µ»ØËü
-	int LocateElem(ListNode e, bool(*compare)(ListNode, ListNode));//²éÕÒµÚÒ»¸öÖµÓëeÂú×ãcompare()µÄÔªËØµÄÎ»Ğò
-	void Add(Sequence s);//¶àÏîÊ½µÄ¼Ó·¨
-	void Minus(Sequence s);//¶àÏîÊ½µÄ¼õ·¨
-	void print();//Êä³öµ±Ç°¶àÏîÊ½
+	void Insert(int i, ListNode e);//åœ¨é¡ºåºçº¿æ€§è¡¨çš„ç¬¬iä¸ªä½ç½®ä¹‹å‰æ’å…¥æ–°çš„å…ƒç´ e
+	ListNode Delete(int i);//åˆ é™¤ç¬¬iä¸ªå…ƒç´ å¹¶è¿”å›å®ƒ
+	int LocateElem(ListNode e, bool(*compare)(ListNode, ListNode));//æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå€¼ä¸eæ»¡è¶³compare()çš„å…ƒç´ çš„ä½åº
+	void Add(Sequence s);//å¤šé¡¹å¼çš„åŠ æ³•
+	void Minus(Sequence s);//å¤šé¡¹å¼çš„å‡æ³•
+	void print();//è¾“å‡ºå½“å‰å¤šé¡¹å¼
 protected:
 	ListNode * _elem;
-	int length;//³¤¶È£¬³õÊ¼ÉèÎª0
-	int listsize;//µ±Ç°·ÖÅäµÄ´æ´¢ÈİÁ¿
+	int length;//é•¿åº¦ï¼Œåˆå§‹è®¾ä¸º0
+	int listsize;//å½“å‰åˆ†é…çš„å­˜å‚¨å®¹é‡
 };
 
